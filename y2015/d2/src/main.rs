@@ -7,6 +7,6 @@ fn main() {
     // part1::solution(String::from("inputs/sample.txt"));
     // part2::solution(String::from("inputs/sample.txt"));
     // //
-    part1::solution(String::from("inputs/input.txt"));
-    // part2::solution(String::from("inputs/input.txt"));
+    // part1::solution(String::from("inputs/input.txt"));
+    part2::solution(String::from("inputs/input.txt"));
 }
