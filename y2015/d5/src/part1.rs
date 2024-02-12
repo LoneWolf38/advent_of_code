@@ -1,10 +1,6 @@
 #[allow(unused_imports)]
 use std::collections::HashSet;
 use std::fs;
-#[allow(dead_code, unused, non_snake_case)]
-fn is_vowel(c: &char) -> bool {
-    matches!(*c, 'a' | 'e' | 'i' | 'o' | 'u')
-}
 pub fn solution(input_path: String) {
     let input = fs::read_to_string(input_path).unwrap();
 
@@ -13,10 +9,9 @@ pub fn solution(input_path: String) {
         .filter(|x| {
             let mut vowels_found = vec![];
 
-            x.chars().for_each(|ch| {
-                if is_vowel(&ch) {
-                    vowels_found.push(ch);
-                }
+            x.chars().for_each(|ch| match ch {
+                'a' | 'e' | 'i' | 'o' | 'u' => vowels_found.push(ch),
+                _ => (),
             });
             if vowels_found.len() >= 3 {
                 return true;
